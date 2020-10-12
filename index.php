@@ -5,45 +5,45 @@ $is_auth = (bool)rand(0, 1);
 $user_name = 'Константин';
 $user_avatar = 'img/user.jpg';
 
-$arCategories = array("Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное");
-$arItemsInfo = array(
-    array(
+$arCategories = ["Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное"];
+$arItemsInfo = [
+    [
         'Name' => '2014 Rossignol District Snowboard',
         'Categorу' => 'Доски и лыжи',
         'Pice' => '10999',
         'URL_picture' => 'img/lot-1.jpg'
-    ),
-    array(
+    ],
+    [
         'Name' => 'DC Ply Mens 2016/2017 Snowboard',
         'Categorу' => 'Доски и лыжи',
         'Pice' => '159999',
         'URL_picture' => 'img/lot-2.jpg'
-    ),
-    array(
+    ],
+    [
         'Name' => 'Крепления Union Contract Pro 2015 года размер L/XL',
         'Categorу' => 'Крепления',
         'Pice' => '8000',
         'URL_picture' => 'img/lot-3.jpg'
-    ),
-    array(
+    ],
+    [
         'Name' => 'Ботинки для сноуборда DC Mutiny Charocal',
         'Categorу' => 'Ботинки',
         'Pice' => '10999',
         'URL_picture' => 'img/lot-4.jpg'
-    ),
-    array(
+    ],
+    [
         'Name' => 'Куртка для сноуборда DC Mutiny Charocal',
         'Categorу' => 'Одежда',
         'Pice' => '7500',
         'URL_picture' => 'img/lot-5.jpg'
-    ),
-    array(
+    ],
+    [
         'Name' => 'Маска Oakley Canopy',
         'Categorу' => 'Разное',
         'Pice' => '5400',
         'URL_picture' => 'img/lot-6.jpg'
-    )
-);
+    ]
+];
 ?>
 <!DOCTYPE html>
 <html lang="ru">
