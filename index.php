@@ -3,6 +3,46 @@ $is_auth = (bool)rand(0, 1);
 
 $user_name = 'Константин';
 $user_avatar = 'img/user.jpg';
+
+$arCategories = array("Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное");
+$arItemsInfo = array(
+    array(
+        'Name' => '2014 Rossignol District Snowboard',
+        'Categorу' => 'Доски и лыжи',
+        'Pice' => '10999',
+        'URL_picture' => 'img/lot-1.jpg'
+    ),
+    array(
+        'Name' => 'DC Ply Mens 2016/2017 Snowboard',
+        'Categorу' => 'Доски и лыжи',
+        'Pice' => '159999',
+        'URL_picture' => 'img/lot-2.jpg'
+    ),
+    array(
+        'Name' => 'Крепления Union Contract Pro 2015 года размер L/XL',
+        'Categorу' => 'Крепления',
+        'Pice' => '8000',
+        'URL_picture' => 'img/lot-3.jpg'
+    ),
+    array(
+        'Name' => 'Ботинки для сноуборда DC Mutiny Charocal',
+        'Categorу' => 'Ботинки',
+        'Pice' => '10999',
+        'URL_picture' => 'img/lot-4.jpg'
+    ),
+    array(
+        'Name' => 'Куртка для сноуборда DC Mutiny Charocal',
+        'Categorу' => 'Одежда',
+        'Pice' => '7500',
+        'URL_picture' => 'img/lot-5.jpg'
+    ),
+    array(
+        'Name' => 'Маска Oakley Canopy',
+        'Categorу' => 'Разное',
+        'Pice' => '5400',
+        'URL_picture' => 'img/lot-6.jpg'
+    )
+);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -35,15 +75,15 @@ $user_avatar = 'img/user.jpg';
                     <p><?= $user_name ?></p>
                 </div>
             <? else: ?>
-            <ul class="user-menu__list">
-                <li class="user-menu__item">
-                    <a href="#">Регистрация</a>
-                </li>
-                <li class="user-menu__item">
-                    <a href="#">Вход</a>
-                </li>
-            </ul>
-            <?endif;?>
+                <ul class="user-menu__list">
+                    <li class="user-menu__item">
+                        <a href="#">Регистрация</a>
+                    </li>
+                    <li class="user-menu__item">
+                        <a href="#">Вход</a>
+                    </li>
+                </ul>
+            <? endif; ?>
         </nav>
     </div>
 </header>
@@ -79,25 +119,28 @@ $user_avatar = 'img/user.jpg';
             <h2>Открытые лоты</h2>
         </div>
         <ul class="lots__list">
-            <li class="lots__item lot">
-                <div class="lot__image">
-                    <img src="img/lot-1.jpg" width="350" height="260" alt="Сноуборд">
-                </div>
-                <div class="lot__info">
-                    <span class="lot__category">Доски и лыжи</span>
-                    <h3 class="lot__title"><a class="text-link" href="lot.html">2014 Rossignol District Snowboard</a>
-                    </h3>
-                    <div class="lot__state">
-                        <div class="lot__rate">
-                            <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost">10 999<b class="rub">р</b></span>
-                        </div>
-                        <div class="lot__timer timer">
+            <? foreach ($arItemsInfo as $ItemInfo): ?>
+                <li class="lots__item lot">
+                    <div class="lot__image">
+                        <img src="<?= $ItemInfo['URL_picture'] ?>" width="350" height="260"
+                             alt="<?= $ItemInfo['Name'] ?>">
+                    </div>
+                    <div class="lot__info">
+                        <span class="lot__category"><?= $ItemInfo['Categorу'] ?></span>
+                        <h3 class="lot__title"><a class="text-link" href="lot.html"><?= $ItemInfo['Name'] ?></a>
+                        </h3>
+                        <div class="lot__state">
+                            <div class="lot__rate">
+                                <span class="lot__amount">Стартовая цена</span>
+                                <span class="lot__cost"><?= $ItemInfo['Pice'] ?><b class="rub">р</b></span>
+                            </div>
+                            <div class="lot__timer timer">
 
+                            </div>
                         </div>
                     </div>
-                </div>
-            </li>
+                </li>
+            <? endforeach; ?>
         </ul>
     </section>
 </main>
@@ -105,24 +148,11 @@ $user_avatar = 'img/user.jpg';
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
-            <li class="nav__item">
-                <a href="all-lots.html">Доски и лыжи</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Крепления</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Ботинки</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Одежда</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Инструменты</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Разное</a>
-            </li>
+            <? foreach ($arCategories as $categoryItem): ?>
+                <li class="nav__item">
+                    <a href="all-lots.html"><?= $categoryItem ?></a>
+                </li>
+            <? endforeach; ?>
         </ul>
     </nav>
     <div class="main-footer__bottom container">
