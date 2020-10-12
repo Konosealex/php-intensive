@@ -133,7 +133,7 @@ $arItemsInfo = array(
                         <div class="lot__state">
                             <div class="lot__rate">
                                 <span class="lot__amount">Стартовая цена</span>
-                                <span class="lot__cost"><?= $ItemInfo['Pice'] ?><b class="rub">р</b></span>
+                                <span class="lot__cost"><?= summFormat($ItemInfo['Pice']); ?></span>
                             </div>
                             <div class="lot__timer timer">
 
